@@ -1,4 +1,5 @@
 permissions:
+  contents: write
   pages: write
 
 on:
