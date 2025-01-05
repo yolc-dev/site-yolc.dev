@@ -44,7 +44,6 @@ specification](https://docs.soliditylang.org/en/latest/abi-spec.html) and a doma
 [Solidity/Yul](https://docs.soliditylang.org/en/latest/yul.html) entirely inside the Haskell language so that you can
 access all Haskell language features before the Haskell code gets compiled into the Solidity/Yul code.
 
-
 ### Safe
 
 Haskell is a purely functional language that provides many type-level safety features when programming. One of the
@@ -116,7 +115,7 @@ production environment, programming on Ethereum becomes a fun experience.
 ## Join!
 
 Today is the launch of the technical preview of the Yolc project. It is the first milestone where Yolc can produce a
-[minimal ERC20 code](https://github.com/yolc-dev/yul-dsl-monorepo/tree/master/examples/demo/src) deployable to Ethereum
+[partial ERC20 code](https://github.com/yolc-dev/yul-dsl-monorepo/tree/master/examples/demo/src) deployable to Ethereum
 networks, demonstrating the key idea of linear-type safety. The technical preview still has its rough edges, but you can
 already [get started](/docs/getting-started/introduction/).
 

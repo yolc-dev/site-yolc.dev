@@ -31,7 +31,7 @@ right_url = "/docs/getting-started/introduction"
 
 [[extra.list]]
 title = "Safe"
-content = "Yolc is purely functional with linear type safety, made for the Ethereum virtual machine."
+content = "Yolc is purely functional with linear-type safety and is made for the Ethereum virtual machine."
 explainer = 'What does <span class="fst-italic">linear type safety</span> mean here? (Coming soon...)'
 explainer_url = "#"
 

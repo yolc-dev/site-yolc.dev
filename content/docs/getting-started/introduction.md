@@ -11,7 +11,7 @@ toc = true
 Yolc is a safe, expressive, fun language for Ethereum, powered by YulDSL/Haskell.
 
 > 🚧 Yolc is currently in technical preview: it works for technical demos, but feature-parity with Solidity will come by
-> Q1.
+> 2025/Q1.
 
 ## Try It Out
 
