@@ -33,15 +33,11 @@ url = "/blog/"
 [[extra.menu.main]]
 name = "Docs"
 section = "docs"
-url = "/docs/"
+url = "/docs/getting-started/introduction/"
 
 [[extra.menu.main]]
 name = "FAQ"
-url = "/docs/faq"
-
-[[extra.menu.main]]
-name = "Community"
-url = "/community"
+url = "/docs/help/faq"
 
 [[extra.menu.social]]
 name = "X"

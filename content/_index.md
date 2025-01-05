@@ -26,8 +26,8 @@ externalCall onTokenMinted hackerAccount mintAmount
 left_url_button = "Read the Introduction"
 left_url = "/blog/introduce-yolc"
 
-right_url_button = "Join the Community"
-right_url = "/community"
+right_url_button = "Get Started"
+right_url = "/docs/getting-started/introduction"
 
 [[extra.list]]
 title = "Safe"
@@ -45,6 +45,6 @@ explainer_url = "#"
 title = "Fun"
 content = "Yolc allows you to write safe code in production, a joyful experience for super coders."
 explainer = 'How can I <span class="fst-italic">get started?</span>'
-explainer_url = "/docs/getstarted"
+explainer_url = "/docs/getting-started/introduction/"
 
 +++

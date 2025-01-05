@@ -11,7 +11,7 @@ toc = true
 ## ⋄ Does it work?
 
 Yes. While it is not yet feature parity with Solidity, we have released the technical review and deployed examples to
-Ethereum networks. Read the [the instruction here](/getstarted) to get started.
+Ethereum networks. Read the [the instruction here](/docs/getting-started/introduction/) to get started.
 
 Yolc will not be a complete toolkit for building Ethereum contracts. Instead, it works best with
 [foundry](https://app.grammarly.com/ddocs/2699404776). More improvements to boilerplate generation will come, so, for
@@ -35,24 +35,25 @@ access all Haskell language features before the Haskell code gets compiled into 
 
 The author is behind the [Superfluid Protocol](https://github.com/superfluid-finance/protocol-monorepo/) on Ethereum
 networks, a money protocol that adds richer semantics to otherwise dull payment infrastructures. While looking for
-improvement opportunities for version 3 of the Superfluid protocol, it became evident that the Ethereum ecosystem needed
-a safer and more expressive language that is also fun to program on.
+improvement opportunities for version 3 of the Superfluid protocol, it became evident to the author that the Ethereum
+ecosystem needed a safer and more expressive language that is also fun to program on.
 
 Instead of waiting for such a thing to appear, the author took the matter into his own hands. Meanwhile, remembering the
 paper ["The Next 700 Programming Languages" by
 P. J. Landin](https://github.com/yolc-dev/yul-dsl-monorepo/blob/master/hs-pkgs/yul-dsl/README.md#motivation), the author
-created Yolc by embedding it in the Haskell language instead of an entirely new language.
+created Yolc by embedding it in the Haskell language instead of creating an entirely new but single-purposed language.
 
 ## ⋄ Where to learn more about Yolc?
 
-If you haven't, read the [introduction blog post](/blog/introduce-yolc) to get familiar with the key concepts of Yolc.
+If you haven't yet, read the [introduction blog post](/blog/introduce-yolc) to get familiar with the key concepts of
+Yolc.
 
-The next step is to visit the [community front page](/community) to follow the updates and hopefully to get stuck in
-soon.
+The next step is to visit the [linktr.ee/yolc](https://linktr.ee/yolc) to follow the updates and get stuck in soon.
 
 ## ⋄ Does Yolc's logo mean something?
 
-Yes. The Ethereum logo in the center is self-evident. The circling arrows and dots around the logo means
+Yes. The Ethereum logo in the center means that Yolc is built for Ethereum. The circling arrows and dots around the logo
+means
 [isomorphism](https://abuseofnotation.github.io/category-theory-illustrated/02_category/#identity-and-isomorphisms) in
 category theory.
 

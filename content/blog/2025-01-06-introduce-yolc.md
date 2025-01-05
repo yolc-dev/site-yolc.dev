@@ -74,10 +74,10 @@ sput (balance_ref_of account) (balanceBefore + mintAmount)
 
 ```
 
-Swapping step 2 and step3 will produce correct code.
+Swapping step 2 and step3 will produce the correct code.
 
-
-Read [here](/docs/linearsafety) to learn more about linear-type safety.
+In the next blog posts, a more detailed explanation of linear safety will explain how it actually works and how to use
+it in your advantages.
 
 ### Expressive
 
@@ -95,9 +95,14 @@ blog posts will explain these features as more becomes available to Yolc.
 *Here is an example of patter matching on optional (Haskell's Maybe type) numbers:*
 
 ```haskell
+-- 1. The following is a lambda expression in Haskell
+--    of two optional numbers `x` and `y`, and
+--    a non-optionan default value `def`.
+-- 2. The `match` function pattern matches the expression `x + y`
+--    which produces a optional number.
 \x y def -> match (x + y) \case
-  Nothing -> def  -- number overflown
-  Just z  -> z    -- just do it
+  Nothing -> def  -- in case of number overflown
+  Just z  -> z    -- otherwise, just do it
 ```
 
 ### Fun
@@ -113,12 +118,13 @@ production environment, programming on Ethereum becomes a fun experience.
 Today is the launch of the technical preview of the Yolc project. It is the first milestone where Yolc can produce a
 [minimal ERC20 code](https://github.com/yolc-dev/yul-dsl-monorepo/tree/master/examples/demo/src) deployable to Ethereum
 networks, demonstrating the key idea of linear-type safety. The technical preview still has its rough edges, but you can
-already [get started](/docs/getstarted).
+already [get started](/docs/getting-started/introduction/).
 
 It has a roadmap to reach key feature parity with Solidity by 2025 Q1, shipping unique features beyond Solidity all the
 time, and adoption from key projects, such as [Superfluid
 Protocol](https://github.com/superfluid-finance/protocol-monorepo/) prototyping its core logic of next version using
 Yolc.
 
-I invite you to [join the journey of Project Yolc as a new community](/community), [follow the updates and learn about
-Yolc](https://linktr.ee/yolc), and let's shape the future of Yolc and the Ethereum ecosystem together!
+I invite you to join the journey of Project Yolc by following the updates and learn about Yolc via your favorite
+channels listed in [linktr.ee/yolc](https://linktr.ee/yolc). Let's shape the future of Yolc and the Ethereum ecosystem
+together!
