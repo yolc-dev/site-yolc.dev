@@ -30,6 +30,19 @@ name = "Blog"
 section = "blog"
 url = "/blog/"
 
+[[extra.menu.main]]
+name = "Docs"
+section = "docs"
+url = "/docs/"
+
+[[extra.menu.main]]
+name = "FAQ"
+url = "/docs/faq"
+
+[[extra.menu.main]]
+name = "Community"
+url = "/community"
+
 [[extra.menu.social]]
 name = "X"
 pre = '''

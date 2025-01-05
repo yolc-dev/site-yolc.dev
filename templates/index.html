@@ -38,10 +38,12 @@
           <div class="text-center">
             <a class="btn btn-primary btn-lg px-4 mb-2" href="{{ get_url(path=section.extra.left_url |
                                                               default(value="/")) | safe }}" role="button">
-              {{ section.extra.left_url_button | default(value="Get started") }}</a>
+              {{ section.extra.left_url_button }}
+            </a>
             <a class="btn btn-primary btn-lg px-4 mb-2 ms-4" href="{{ get_url(path=section.extra.right_url |
                                                                    default(value="/")) | safe }}" role="button">
-              {{ section.extra.right_url_button | default(value="Get started") }}</a>
+              {{ section.extra.right_url_button }}
+            </a>
           </div>
         </div>
       </div>

@@ -4,7 +4,9 @@
 	<div class="container">
 		<input class="menu-btn order-0" type="checkbox" id="menu-btn">
 		<label class="menu-icon d-md-none" for="menu-btn"><span class="navicon"></span></label>
-        <img src="{{ config.extra.icon }}" height=64 class="btn"> </img>
+        <a class="navbar-brand order-1 order-md-0 me-auto" href="{{ config.base_url | safe }}">
+          <img src="{{ config.extra.icon }}" height=64 class="btn"> </img>
+        </a>
 		<a class="navbar-brand order-1 order-md-0 me-auto" href="{{ config.base_url | safe }}">
             {{ config.title | default(value="AdiDoks") }}
         </a>
