@@ -14,7 +14,9 @@ On 30th July 2015, the Ethereum network [went live](https://blog.ethereum.org/20
 Fast-forward 10 years. By the time of writing this post, according to [etherscan](https://etherscan.io/), the Ethereum
 network has made 2.6 billion transactions and processed 21.6 million blocks. It currently processes 13 transactions per
 second on its base layer alone, while a few layer 2s further scale its capacity at a much higher throughput of
-transactions per second. Ethereum has already significantly impacted the world and is here to stay.
+transactions per second.
+
+> Ethereum has already significantly impacted the world and is here to stay.
 
 Programming on Ethereum, as a smart contract platform, has never been easier since the creation of the [Solidity
 language](https://soliditylang.org/). Many have benefited from it, creating worldwide socially and economically
@@ -36,6 +38,12 @@ Yolc is not entirely a new language. Instead, it embeds itself in [Haskell
 language](https://www.haskell.org/). Therefore, programming in Yolc is programming in Haskell, a general-purpose
 language with its [share of success in the industry](https://github.com/erkmos/haskell-companies), including the latest
 ones such as Groq.
+
+Additionally, Yolc implements both the [Ethereum contract ABI
+specification](https://docs.soliditylang.org/en/latest/abi-spec.html) and a domain model of
+[Solidity/Yul](https://docs.soliditylang.org/en/latest/yul.html) entirely inside the Haskell language so that you can
+access all Haskell language features before the Haskell code gets compiled into the Solidity/Yul code.
+
 
 ### Safe
 
