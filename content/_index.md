@@ -32,8 +32,8 @@ right_url = "/docs/getting-started/introduction"
 [[extra.list]]
 title = "Safe"
 content = "Yolc is purely functional with linear type safety, made for the Ethereum virtual machine."
-explainer = 'What does <span class="fst-italic">linear type safety</span> mean here?'
-explainer_url = "/docs/linearsafety"
+explainer = 'What does <span class="fst-italic">linear type safety</span> mean here? (Coming soon...)'
+explainer_url = "#"
 
 [[extra.list]]
 title = "Expressive"
@@ -45,6 +45,6 @@ explainer_url = "#"
 title = "Fun"
 content = "Yolc allows you to write safe code in production, a joyful experience for super coders."
 explainer = 'How can I <span class="fst-italic">get started?</span>'
-explainer_url = "/docs/getting-started/introduction/"
+explainer_url = "/docs/getting-started/introduction"
 
 +++
