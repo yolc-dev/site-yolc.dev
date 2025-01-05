@@ -1,7 +1,6 @@
 +++
 title = "Introducing Yolc"
 date = 2025-01-06T09:00:00
-draft = true
 template = "blog/page.html"
 
 [extra]
