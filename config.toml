@@ -25,6 +25,8 @@ icon = "/yolc-logo-256x256.png"
 
 timezone = "Europe/Tallinn"
 
+title_addition = "A safe, expressive, fun language for Ethereum"
+
 [[extra.menu.main]]
 name = "Blog"
 section = "blog"
