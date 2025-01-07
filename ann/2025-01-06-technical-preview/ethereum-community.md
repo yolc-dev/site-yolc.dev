@@ -27,5 +27,7 @@ I look forward to having you join Yolc's journey!
 Posts Tracking
 --------------
 
-- Ethereum Magicians: https://ethereum-magicians.org/
-- Hacker News: https://news.ycombinator.com/
+- Ethereum Magicians: https://ethereum-magicians.org/t/ann-yolc-a-safe-expressive-fun-language-for-ethereum/22427
+- Solidity Forum: https://forum.soliditylang.org/t/ann-yolc-a-safe-expressive-fun-language-for-ethereum-using-solidity-yul/3212
+- Hacker News: https://news.ycombinator.com/item?id=42608893
+- Lobsters: https://lobste.rs/s/ivkkly/yolc_haskell_powered_safe_expressive_fun

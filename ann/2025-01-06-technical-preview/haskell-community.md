@@ -118,3 +118,11 @@ feature-parity with [Solidity](https://docs.soliditylang.org/) by Q1/2025.
 
 Please consider following the progress of my further work at [linktr.ee/yolc](https://linktr.ee/yolc), and more
 importantly happy Haskelling.
+
+-----
+
+Post Tracking
+-------------
+
+- Haskell Discourse: https://www.reddit.com/r/haskell/comments/1huujfz/ann_yolc_a_haskellpowered_safe_expressive_fun/
+- Reddit: https://www.reddit.com/r/haskell/comments/1huujfz/ann_yolc_a_haskellpowered_safe_expressive_fun/
