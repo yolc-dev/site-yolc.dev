@@ -38,6 +38,8 @@ installs and in `/etc/nix` in multi-user installs):
   ```
   $ cd yul-dsl-monorepo
   $ nix develop .
+  # Also, let's refresh cabal packages list (Haskell's package manager) in case you haven't yet
+  $ cabal update
   ```
 
 * Step 5: Run the ERC20 demo that test it using [foundry](https://github.com/foundry-rs/foundry).
