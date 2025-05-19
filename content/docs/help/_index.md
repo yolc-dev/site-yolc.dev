@@ -1,6 +1,6 @@
 +++
 title = "Help"
 sort_by = "weight"
-weight = 99
+weight = 40
 draft = false
 +++

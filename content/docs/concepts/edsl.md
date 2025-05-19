@@ -6,7 +6,7 @@ template = "docs/page.html"
 
 [extra]
 toc = true
-lead = "This makes Yolc expressive."
+lead = "Haskell makes Yolc expressive."
 +++
 
 # What Is Deep Embedding
