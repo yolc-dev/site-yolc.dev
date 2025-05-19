@@ -41,9 +41,9 @@ url = "/docs/getting-started/introduction/"
 name = "FAQ"
 url = "/docs/help/faq"
 
-[[extra.menu.main]]
-name = "Playground"
-url = "https://play.yolc.dev/"
+#[[extra.menu.main]]a
+#name = "Playground"
+#url = "https://play.yolc.dev/"
 
 [[extra.menu.social]]
 name = "X Social"

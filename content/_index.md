@@ -7,19 +7,17 @@ lead = "A safe, expressive, fun language for Ethereum"
 
 code_example = """
 ```haskell
--- ⭐ pattern matching coming to Ethereum
-\\x y def -> match (x + y) \\case
-  Nothing -> def  -- number overflown
-  Just z  -> z    -- just do it
-
--- enforced linear type safety for side effects
-sputs $ -- ⚠️ after this, data version increased by 1
-  senderBalanceRef   := newSenderBalance   :|
-  receiverBalanceRef := newReceiverBalance : []
-
--- linearly versioned data is here to help: --->
--- 🌟 reentrance vulnerability gone forever 🌟
-externalCall onTokenMinted hackerAccount mintAmount
+mint :: OmniFn (ADDR -> U256 -> ())
+mint = $lfn $ ylvm'pv
+  \\to amount -> LVM.do
+    Ur balanceBefore <- ycall balanceOf (ver to)
+    Ur newAmount <- ywithrv_1 (balanceBefore, ver amount)
+                    (\\x y -> x + y)
+    -- ⚠️ NOTE: DATA VERSIONING AT COMPILE-TIME:
+    -- update balance must happen before external calls.
+    balances #-> to <<:= newAmount
+    -- call **untrusted** external contract onTokenMinted
+    ycall (to @-> onTokenMinted) (ver to) (ver amount)
 ```
 """
 
@@ -31,15 +29,15 @@ right_url = "/docs/getting-started/introduction"
 
 [[extra.list]]
 title = "Safe"
-content = "Yolc is purely functional with linear-type safety and is made for the Ethereum virtual machine."
-explainer = 'What does <span class="fst-italic">linear type safety</span> mean here? (Coming soon...)'
-explainer_url = "#"
+content = "Yolc is purely functional with compile-time data versioning made for the Ethereum virtual machine."
+explainer = 'What does <span class="fst-italic">data versioning</span> mean here?'
+explainer_url = "/docs/concepts/data-versioning"
 
 [[extra.list]]
 title = "Expressive"
 content = "Yolc embeds itself in the Haskell language before being compiled into Solidity/Yul code."
-explainer = 'What does <span class="fst-italic">embedding</span> mean here to expressiveness? (Coming soon...)'
-explainer_url = "#"
+explainer = 'What does <span class="fst-italic">embedding</span> mean here to expressiveness?'
+explainer_url = "/docs/concepts/edsl"
 
 [[extra.list]]
 title = "Fun"

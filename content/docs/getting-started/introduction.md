@@ -43,7 +43,7 @@ installs and in `/etc/nix` in multi-user installs):
   ```
 
 * Step 5: Run the ERC20 demo that test it using [foundry](https://github.com/foundry-rs/foundry).
-  ```shell
+  ```
   $ make test-demo-foundry
   ```
   ```
@@ -67,7 +67,7 @@ Great success!
 
 You should now also have a look of how the Solidity/Yul code looks like:
 
-```shell
+```
 $ make test-demo-yul | grep -v '//dbg:'
 ```
 

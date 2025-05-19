@@ -1,6 +1,6 @@
 +++
-title = "Safety Features"
+title = "Advanced Topics"
 sort_by = "weight"
 template = "docs/section.html"
-weight = 1
+weight = 80
 +++
