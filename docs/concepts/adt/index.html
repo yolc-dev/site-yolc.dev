@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" as="font" href="https://yolc.dev/fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="https://yolc.dev/fonts/vendor/jost/jost-v4-latin-700.woff2"  type="font/woff2" crossorigin>
+
+
+<link rel="stylesheet" href="https://yolc.dev/main.css">
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+  
+  
+  
+    
+  
+  
+  
+  
+    
+  
+  
+  
+
+
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+	
+
+
+	
+
+<title>Algebraic Data Types (ADT) | Yolc</title>
+<meta name="description" content="">
+<link rel="canonical" href="https://yolc.dev/docs/concepts/adt/">
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://yolc.dev/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Docs",
+            "item": "https://yolc.dev/docs/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "Concepts",
+            "item": "https://yolc.dev/docs/concepts/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  4 ,
+            "name": "Adt",
+            "item": "https://yolc.dev/docs/concepts/adt/"
+          },
+        
+      
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="theme-color" content="#fff">
+  <link rel="icon"  href="https://yolc.dev/favicon.png">
+  
+    <link rel="manifest" href="https://yolc.dev/site.webmanifest" crossorigin>
+  
+
+
+  
+
+</head>
+
+  
+
+<body class="docs single">
+  
+  
+  
+  
+<div class="header-bar fixed-top"></div>
+<header class="navbar fixed-top navbar-expand-md navbar-light">
+	<div class="container">
+		<input class="menu-btn order-0" type="checkbox" id="menu-btn">
+		<label class="menu-icon d-md-none" for="menu-btn"><span class="navicon"></span></label>
+        <a class="navbar-brand order-1 order-md-0 me-auto" href="https://yolc.dev">
+          <img src="&#x2F;yolc-logo-256x256.png" height=64 class="btn"> </img>
+        </a>
+		<a class="navbar-brand order-1 order-md-0 me-auto" href="https://yolc.dev">
+            Yolc
+        </a>
+		<button id="mode" class="btn btn-link order-2 order-md-4" type="button" aria-label="Toggle mode">
+			<span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+			<span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+		</button>
+		<ul class="navbar-nav fork-me order-3 order-md-5">
+			
+				<li class="nav-item">
+					<a class="nav-link" href="https://x.com/yolc_dev"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><path d="M14.095479,10.316482L22.286354,1h-1.940718l-7.115352,8.087682L7.551414,1H1l8.589488,12.231093L1,23h1.940717  l7.509372-8.542861L16.448587,23H23L14.095479,10.316482z M11.436522,13.338465l-0.871624-1.218704l-6.924311-9.68815h2.981339  l5.58978,7.82155l0.867949,1.218704l7.26506,10.166271h-2.981339L11.436522,13.338465z"/></svg>
+<span class="ms-2 visually-hidden">X (Social)</span>
+<span class="ms-2 visually-hidden">X Social</span></a>
+				</li>
+			
+				<li class="nav-item">
+					<a class="nav-link" href="https://github.com/yolc-dev/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35
+                    6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0
+                    0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44
+                    7A3.37 3.37 0 0 0 9 18.13V22">
+  </path>
+</svg>
+<span class="ms-2 visually-hidden">GitHub</span>
+<span class="ms-2 visually-hidden">GitHub</span></a>
+				</li>
+			
+				<li class="nav-item">
+					<a class="nav-link" href="https://matrix.to/#/#yolc:matrix.org"><svg width="20" height="20" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.4414 3.24C19.4414 1.4506 20.892 0 22.6814 0C34.6108 0 44.2814 9.67065 44.2814 21.6C44.2814 23.3894 42.8308 24.84 41.0414 24.84C39.252 24.84 37.8014 23.3894 37.8014 21.6C37.8014 13.2494 31.032 6.48 22.6814 6.48C20.892 6.48 19.4414 5.0294 19.4414 3.24Z" fill="#0DBD8B"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M34.5586 50.76C34.5586 52.5494 33.108 54 31.3186 54C19.3893 54 9.71861 44.3294 9.71861 32.4C9.71861 30.6106 11.1692 29.16 12.9586 29.16C14.748 29.16 16.1986 30.6106 16.1986 32.4C16.1986 40.7505 22.9681 47.52 31.3186 47.52C33.108 47.52 34.5586 48.9706 34.5586 50.76Z" fill="#0DBD8B"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.24 34.5601C1.4506 34.5601 -6.34076e-08 33.1095 -1.41625e-07 31.3201C-6.63074e-07 19.3907 9.67065 9.72007 21.6 9.72007C23.3894 9.72007 24.84 11.1707 24.84 12.9601C24.84 14.7495 23.3894 16.2001 21.6 16.2001C13.2495 16.2001 6.48 22.9695 6.48 31.3201C6.48 33.1095 5.0294 34.5601 3.24 34.5601Z" fill="#0DBD8B"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M50.76 19.4399C52.5494 19.4399 54 20.8905 54 22.6799C54 34.6093 44.3294 44.2799 32.4 44.2799C30.6106 44.2799 29.16 42.8293 29.16 41.0399C29.16 39.2505 30.6106 37.7999 32.4 37.7999C40.7505 37.7999 47.52 31.0305 47.52 22.6799C47.52 20.8905 48.9706 19.4399 50.76 19.4399Z" fill="#0DBD8B"/>
+</svg>
+<span class="ms-2 visually-hidden">Matrix Room</span></a>
+				</li>
+			
+				<li class="nav-item">
+					<a class="nav-link" href="https://linktr.ee/yolc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" width="20" height="20" ><title>Linktree Logo</title><desc>Linktree Logo Symbol</desc><path d="M13.5108 5.85343L17.5158 1.73642L19.8404 4.11701L15.6393 8.12199H21.5488V11.4268H15.6113L19.8404 15.5345L17.5158 17.8684L11.7744 12.099L6.03299 17.8684L3.70842 15.5438L7.93745 11.4361H2V8.12199H7.90944L3.70842 4.11701L6.03299 1.73642L10.038 5.85343V0H13.5108V5.85343ZM10.038 16.16H13.5108V24.0019H10.038V16.16Z" fill="#000000"></path></svg>
+<span class="ms-2 visually-hidden">Linktree</span>
+<span class="ms-2 visually-hidden">Linktree</span></a>
+				</li>
+			
+		</ul>
+		<div class="collapse navbar-collapse order-4 order-md-1">
+			<ul class="navbar-nav main-nav me-auto order-5 order-md-2">
+				
+					
+				
+				
+				
+					
+						
+							<li class="nav-item">
+								<a class="nav-link" href="https://yolc.dev/blog/">Blog</a>
+							</li>
+						
+					
+						
+							<li class="nav-item docs active">
+								<a class="nav-link" href="https://yolc.dev/docs/getting-started/introduction/">Docs</a>
+							</li>
+						
+					
+						
+							<li class="nav-item">
+								<a class="nav-link" href="/docs/help/faq">FAQ</a>
+							</li>
+						
+					
+				
+			</ul>
+			<div class="break order-6 d-md-none"></div>
+			
+				<form class="navbar-form flex-grow-1 order-7 order-md-3">
+					<input id="userinput" class="form-control is-search" type="search" placeholder="Search…"
+						aria-label="Search…" autocomplete="off">
+					<div id="suggestions" class="shadow bg-white rounded"></div>
+				</form>
+			
+		</div>
+	</div>
+</header>
+
+
+
+  
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row flex-xl-nowrap">
+	  
+<div class="col-lg-5 col-xl-4 docs-sidebar">
+	<nav class="docs-links" aria-label="Main navigation">
+			
+			
+			
+			
+					
+					
+					
+							<h3>Getting Started</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://yolc.dev/docs/getting-started/introduction/">Introduction</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>Concepts</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://yolc.dev/docs/concepts/edsl/">Embedded DSL (EDSL) in Haskell</a></li>
+							                           
+									<li><a class="docs-link active" href="https://yolc.dev/docs/concepts/adt/">Algebraic Data Types (ADT)</a></li>
+							                           
+									<li><a class="docs-link" href="https://yolc.dev/docs/concepts/data-versioning/">Data Versioning</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>Help</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://yolc.dev/docs/help/faq/">Frequently Asked Questions</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>Advanced Topics</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://yolc.dev/docs/advanced/category-dsl/">YulDSL - A Category-theoretical DSL</a></li>
+							                           
+									<li><a class="docs-link" href="https://yolc.dev/docs/advanced/linear-types/">Using Linear Types in Yolc</a></li>
+							
+					</ul>
+					
+					
+			
+	</nav>
+</div>
+
+	  
+  
+  <nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+  	<div class="page-links">
+  			<h3>On this page</h3>
+  			<nav id="TableOfContents">
+  					<ul>
+  							
+  					</ul>
+  			</nav>
+  	</div>
+  </nav>
+  
+
+      <main class="docs-content col-lg-11 col-xl-9">
+        <h1>Algebraic Data Types (ADT)</h1>
+        
+        <p>(🚧 COMING SOON...)</p>
+
+        
+        
+<div class="docs-navigation d-flex justify-content-between">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+            
+              
+              <a href="https:&#x2F;&#x2F;yolc.dev&#x2F;docs&#x2F;getting-started&#x2F;introduction&#x2F;">
+                <div class="card my-1">
+                  <div class="card-body py-2">
+                    &larr; Introduction
+                  </div>
+                </div>
+              </a>
+            
+            
+            
+          
+        
+      
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+          
+          
+          <a class="ms-auto" href="https:&#x2F;&#x2F;yolc.dev&#x2F;docs&#x2F;help&#x2F;faq&#x2F;">
+            <div class="card my-1">
+              <div class="card-body py-2">
+                Frequently Asked Questions &rarr;
+              </div>
+            </div>
+          </a>
+          
+          
+          
+        
+      
+    
+      
+      
+        
+      
+    
+  
+</div>
+
+      </main>
+    </div>
+  </div>
+</div>
+
+
+  
+    
+<footer class="footer text-muted">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 order-last order-lg-first">
+				<ul class="list-inline">
+					
+						<li class="list-inline-item">Powered by <a href="https://www.getzola.org/">Zola</a>, and <a href="https://github.com/aaranxu/adidoks">AdiDoks</a></li>
+					
+				</ul>
+			</div>
+			<div class="col-lg-8 order-first order-lg-last text-lg-end">
+				<ul class="list-inline">
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+  
+
+  
+<script type="text/javascript" src="https://yolc.dev/js/main.js" defer></script>
+
+  <script type="text/javascript" src="https://yolc.dev/plugins/elasticlunr.min.js" defer></script>
+  <script type="text/javascript" src="https://yolc.dev/search_index.en.js" defer></script>
+  <script type="text/javascript" src="https://yolc.dev/js/search.js" defer></script>
+
+  
+</body>
+</html>
