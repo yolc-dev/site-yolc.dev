@@ -21,8 +21,8 @@ mint = $lfn $ ylvm'pv
 ```
 """
 
-left_url_button = "Read the Introduction"
-left_url = "/blog/introduce-yolc"
+left_url_button = "Checkout Docs"
+left_url = "/docs/concepts/edsl"
 
 right_url_button = "Get Started"
 right_url = "/docs/getting-started/introduction"
